@@ -62,6 +62,8 @@ public class Village {
 	}
 	
 
+	
+
 	public static void main(String[] args) {
 		Village village = new Village("Village des irréductibles", 30);
 		

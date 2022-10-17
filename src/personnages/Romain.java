@@ -7,6 +7,8 @@ public class Romain {
 	public Romain(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
+		
+		
 	}
 
 	public String getNom() {
@@ -30,11 +32,18 @@ public class Romain {
 		}
 	}
 	
+	public static boolean forceToujoursPositive(Romain romain) {
+		return romain.force>=0;
+		
+	}
+	
+	
 	public static void main(String[] args) {
-//		Romain randomRomain = new Romain("randomRomain",3);
-//		System.out.println(randomRomain.prendreParole()); 
-//		randomRomain.parler("Je viens de Rome");
-//		randomRomain.recevoirCoup(8);
+		Romain Minus = new Romain("Minus",6);
+		int varForce = Minus.force;
+/* Precondition */		assert forceToujoursPositive(Minus);
+		Minus.recevoirCoup(8);
+/* Postcondition */		assert varForce < Minus.force;
 		
 	}
 
