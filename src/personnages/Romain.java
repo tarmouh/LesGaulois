@@ -37,14 +37,17 @@ public class Romain {
 		
 	}
 	
+
 	
 	public static void main(String[] args) {
 		Romain Minus = new Romain("Minus",6);
 		int varForce = Minus.force;
 /* Precondition */		assert forceToujoursPositive(Minus);
-		Minus.recevoirCoup(8);
+		Minus.recevoirCoup(1);
 /* Postcondition */		assert varForce < Minus.force;
-		
+//		System.out.println(Equipement.BOUCLIER);
+//		System.out.println(Equipement.CASQUE);
+	
 	}
 
 }
