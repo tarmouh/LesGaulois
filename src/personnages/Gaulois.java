@@ -3,8 +3,9 @@ package personnages;
 public class Gaulois {
 	private String nom;
 	private int effetPotion = 1;
-	private int force, nb_trophees;
-	private Equipement trophees[] = new Equipement[100];
+	private int force;
+	private int nbTrophees;
+	private Equipement[] trophees = new Equipement[100];
 
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
@@ -23,14 +24,15 @@ public class Gaulois {
 		System.out.println(prendreParole() + "« " + texte + "»");
 	}
 
-//	private String prendreParole() {
-//		return "Le gaulois " + nom + " : ";
-//	}
+	/*
+	 * private String prendreParole() { return "Le gaulois " + nom + " : "; }
+	 */
 
-//	public void frapper(Romain romain) {
-//		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
-//		romain.recevoirCoup((force / 3) * effetPotion);
-//	}
+	/*
+	 * public void frapper(Romain romain) { System.out.println(nom +
+	 * " envoie un grand coup dans la mâchoire de " + romain.getNom());
+	 * romain.recevoirCoup((force / 3) * effetPotion); }
+	 */
 
 	public void boirePotion(int forcePotion) {
 		effetPotion = forcePotion;
@@ -45,21 +47,21 @@ public class Gaulois {
 	}
 
 	public void frapper(Romain romain) {
-		System.out.println(nom + " envoie un grand coup dans la	mâchoire de " + romain.getNom());
-		Equipement trophees[] = romain.recevoirCoup((force / 3) * effetPotion);
-		for (int i = 0; trophees != null && i < trophees.length; i++, nb_trophees++) {
-			this.trophees[nb_trophees] = trophees[i];
+		String texte = " envoie un grand coup dans la mâchoire de ";
+		System.out.println(nom + texte + romain.getNom());
+		Equipement[] trophee = romain.recevoirCoup((force / 3) * effetPotion);
+		for (int i = 0; trophee != null && i < trophee.length; i++, nbTrophees++) {
+			this.trophees[nbTrophees] = trophee[i];
 		}
-		return;
+
 	}
 
 	private String prendreParole() {
-		String texte = "Le gaulois " + nom + " : ";
-		return texte;
+		return "Le gaulois " + nom + " : ";
 	}
 
 	public static void main(String[] args) {
-
+		// TODO document why this method is empty
 	}
 
 }

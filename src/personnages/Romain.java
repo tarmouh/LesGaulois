@@ -86,7 +86,6 @@ public class Romain {
 		switch (force) {
 		case 0:
 			parler("Aïe");
-
 		default:
 			equipementEjecte = ejecterEquipement();
 			parler("J'abandonne...");
@@ -102,29 +101,34 @@ public class Romain {
 		int resistanceEquipement = 0;
 		if (!(nbEquipement == 0)) {
 			texte += "\nMais heureusement, grace à mon équipement sa force est diminué de ";
-			for (int i = 0; i < nbEquipement;) {
-				if ((equipements[i] != null && equipements[i].equals(Equipement.BOUCLIER)) == true) {
+			for (int i = 0; i < nbEquipement; i++) {
+				if ((equipements[i] != null && equipements[i].equals(Equipement.BOUCLIER))) {
 					resistanceEquipement += 8;
+
 				} else {
 					System.out.println("Equipement casque");
 					resistanceEquipement += 5;
 				}
-				i++;
+
 			}
 			texte += resistanceEquipement + "!";
 		}
 		parler(texte);
 		forceCoup -= resistanceEquipement;
-		return forceCoup;
+		if (forceCoup <= 0) {
+			return 0;
+		} else {
+			return forceCoup;
+		}
+
 	}
 
 	private Equipement[] ejecterEquipement() {
 		Equipement[] equipementEjecte = new Equipement[nbEquipement];
-		System.out.println("L'équipement de " + nom.toString() + "s'envole sous la force du coup.");
+		System.out.println("L'équipement de " + nom.toString() + " s'envole sous la force du coup.");
 		// TODO
 		int nbEquipementEjecte = 0;
 		for (int i = 0; i < nbEquipement; i++) {
-
 			if (equipements[i] == null) {
 				continue;
 			} else {
@@ -137,7 +141,7 @@ public class Romain {
 	}
 
 	public static void main(String[] args) {
-		Romain Minus = new Romain("Minus", 6);
+//		Romain Minus = new Romain("Minus", 6);
 //		int varForce = Minus.force;
 		/* Precondition */ // assert forceToujoursPositive(Minus);
 //		Minus.recevoirCoup(1);
@@ -145,12 +149,12 @@ public class Romain {
 //		System.out.println(Equipement.BOUCLIER);
 //		System.out.println(Equipement.CASQUE);
 
-		Equipement casque = Equipement.CASQUE;
-		Equipement bouclier = Equipement.BOUCLIER;
-		Minus.sEquiper(casque);
-		Minus.sEquiper(casque);
-		Minus.sEquiper(bouclier);
-		Minus.sEquiper(bouclier);
+//		Equipement casque = Equipement.CASQUE;
+//		Equipement bouclier = Equipement.BOUCLIER;
+//		Minus.sEquiper(casque);
+//		Minus.sEquiper(casque);
+//		Minus.sEquiper(bouclier);
+//		Minus.sEquiper(bouclier);
 	}
 
 }
