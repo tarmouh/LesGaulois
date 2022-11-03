@@ -60,6 +60,21 @@ public class Gaulois {
 		return "Le gaulois " + nom + " : ";
 	}
 
+	public void faireUneDonnation(Musee musee) {
+		if (nbTrophees > 0) {
+			parler("Je donne au musee tous mes trophees");
+			for (int i = 0; i < nbTrophees; i++) {
+				if (trophees[i] != null) {
+					musee.donnerTrophees(this, trophees[i]);
+					System.out.println("- " + trophees[i]);
+				}
+
+			}
+		} else {
+			System.out.println("Je n'ai pas de trophees");
+		}
+	}
+
 	public static void main(String[] args) {
 		// TODO document why this method is empty
 	}

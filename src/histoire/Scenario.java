@@ -3,6 +3,7 @@ package histoire;
 import personnages.Druide;
 import personnages.Equipement;
 import personnages.Gaulois;
+import personnages.Musee;
 import personnages.Romain;
 
 public class Scenario {
@@ -31,8 +32,10 @@ public class Scenario {
 			asterix.frapper(milexcus);
 		} while (milexcus.getForce() > 0);
 
-//		Musee musee = new Musee();
-//		asterix.faireUneDonnation(musee);
+		Musee musee = new Musee();
+		asterix.faireUneDonnation(musee);
+		String texte = musee.extraireInstructionsCaml();
+		System.out.println(texte);
 
 	}
 
